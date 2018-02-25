@@ -1,0 +1,24 @@
+{
+  "name": "breakfastandfate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheMagicCat/breakfastandfate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheMagicCat/breakfastandfate/issues"
+  },
+  "homepage": "https://github.com/TheMagicCat/breakfastandfate#readme",
+  "dependencies": {
+    "headroom.js": "^0.9.4",
+    "most": "^1.7.3"
+  }
+}
