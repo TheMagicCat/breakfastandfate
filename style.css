@@ -1,13 +1,3 @@
-/* Focus + Hover = Hocus */
-/* @custom-selector :--hocus :hover, :focus; */
-
-/* Block Display */
-/* @custom-selector :--block-elements p h1 h2 h3 h4 h5 h6 body div article section nav main header footer table code pre blockquote ; */
-
-/* Inline Display */
-/* @custom-selector :--inline-elements span small strong b i ; */
-
-/* Thanks to TypeScale! */
 :root {
   font-size: 16px;
 }
@@ -25,27 +15,27 @@
 }
 
 * {
-  transition: transform 700ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
   box-sizing: border-box;
+  transform: translateZ(0);
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 body {
   background-color: white;
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Crimson Text', serif;
   font-weight: 300;
   line-height: 1.45;
   color: black;
   height: 100%;
   margin: auto;
-  padding: 0;
-  border: none;
 }
 
 p {margin-bottom: 1.3em;}
 
 h1, h2, h3, h4 {
   margin: 1.414em 0 0.5em;
-  font-family: 'Merriweather', serif;
   font-weight: 400;
   line-height: 1.2;
 }
@@ -72,14 +62,12 @@ small, .font_small {font-size: 0.707rem;}
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  /* will-change: transform; */
-}
-
-.container > svg.subject {
-  /* filter: blur(10px); */
-  width: 100%;
-  height: 100%;
-  transform: scale(1.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+    "top top" 
+    "low-left low-right";
 }
 
 .container > .layer {
@@ -88,65 +76,46 @@ small, .font_small {font-size: 0.707rem;}
   object-fit: cover;
   width: 100%;
   height: 100%;
-  transform: scale(1.1);
+  transition: transform 700ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
+  will-change: transform;
+  transform: matrix(1.1, 0, 0, 1.1, 0, 0);
 }
 
-/* .layer1 {
-  position: absolute;
-  width: 100%;
-  object-fit: none;
-  object-position: 0 1690px;
+.iconLink {
+  padding: 0 1rem;
+  mix-blend-mode: color-dodge;
 }
 
-.layer2 {
-  position: absolute;
-  width: 100%;
-  object-fit: none;
-  object-position: 0 902px;
+.icon {
+  transition: all 500ms cubic-bezier(0.420, 0.000, 0.580, 1.000); /* ease-in-out */
+  will-change: opacity;
+  width: 4rem;
+  fill: #888;
+  fill-opacity: 0.8;
 }
 
-.layer3 {
-  position: absolute;
-  width: 100%;
-  object-fit: none;
-  object-position: 0 447px;
+.emailLink {
+  grid-area: low-right;
+  justify-self: start;
+  align-self: start;
 }
 
-.layer4 {
-  position: absolute;
-  width: 100%;
-  object-fit: none;
-  object-position: 0 0;
-} */
-
-.lines {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  padding: 20px;
-  opacity: 0.7;
+.githubLink {
+  grid-area: low-left;
+  justify-self: end;
+  align-self: start;
 }
 
-.lines > path {
-  stroke-width: 2px;
+.icon:hover {
+  fill: #ddd;
+  fill-opacity: 1;
 }
 
-.test {
-  position: absolute;
-  top: 50%;
-  left: 25%;
-  color: white;
-}
-
-.title {
-  position: absolute;
-  color: rgba(255,255,255, 0.75);
-  font-family: 'Crimson Text', serif;
-  padding-left: 50px;
-  padding-top: 30px;
-  top: 0;
-  left: 0;
-  background-blend-mode: overlay;
+.name {
+  grid-area: top;
+  align-self: end;
+  justify-self: center;
+  padding: 1rem;
+  mix-blend-mode: color-dodge;
+  color: #888;
 }
