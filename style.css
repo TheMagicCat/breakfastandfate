@@ -71,7 +71,7 @@ small, .font_small {font-size: 0.707rem;}
   position: relative;
   width: 100vw;
   height: 100vh;
-  /* overflow: hidden; */
+  overflow: hidden;
   /* will-change: transform; */
 }
 
@@ -82,13 +82,42 @@ small, .font_small {font-size: 0.707rem;}
   transform: scale(1.1);
 }
 
-.container > img {
+.container > .layer {
+  position: absolute;
   object-position: 50% 100%;
   object-fit: cover;
   width: 100%;
   height: 100%;
-  /* transform: scale(1.1); */
+  transform: scale(1.1);
 }
+
+/* .layer1 {
+  position: absolute;
+  width: 100%;
+  object-fit: none;
+  object-position: 0 1690px;
+}
+
+.layer2 {
+  position: absolute;
+  width: 100%;
+  object-fit: none;
+  object-position: 0 902px;
+}
+
+.layer3 {
+  position: absolute;
+  width: 100%;
+  object-fit: none;
+  object-position: 0 447px;
+}
+
+.layer4 {
+  position: absolute;
+  width: 100%;
+  object-fit: none;
+  object-position: 0 0;
+} */
 
 .lines {
   position: absolute;
